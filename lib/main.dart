@@ -1,73 +1,143 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() => runApp(
+  MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: HomePage()
+  )
+);
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Data Hasil Perhitungan',
-      home: ShowDataTable(),
-    );    
-  }
-}
-
-class ShowDataTable extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Hasil Perhitungan'),
-      ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: DataTable(
-          columns: [
-            DataColumn(label: Text('No.')),
-            DataColumn(label: Text('Kode Kriteria')),
-            DataColumn(label: Text('Kriteria')),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              height: 400,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: -40,
+                    height: 400,
+                    width: width,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/background.png'),
+                          fit: BoxFit.fill
+                        )
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    height: 400,
+                    width: width+20,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/background-2.png'),
+                          fit: BoxFit.fill
+                        )
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    height: 200,
+                    width: 200,
+                    top:80,
+                    left: 100,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/tempekarina12.png'),
+                          fit: BoxFit.fill
+                        )
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Center(child: (Text("SPK Penentuan Kualitas", style: TextStyle(color: Color.fromRGBO(49, 39, 79, 1), fontWeight: FontWeight.bold, fontSize: 30))),),
+                  Center(child: (Text("Produk Camilan", style: TextStyle(color: Color.fromRGBO(49, 39, 79, 1), fontWeight: FontWeight.bold, fontSize: 30))),),
+                  SizedBox(height: 30,),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(196, 135, 198, .3),
+                          blurRadius: 20,
+                          offset: Offset(0, 10),
+                        )
+                      ]
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border(bottom: BorderSide(
+                              color: Colors.grey
+                            ))
+                          ),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Username",
+                              hintStyle: TextStyle(color: Colors.grey)
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Password",
+                              hintStyle: TextStyle(color: Colors.grey)
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 50,),
+                  Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 60),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Color.fromRGBO(138, 205, 201, 1),
+                    ),
+                    child: Center(
+                      child: Text("Login", style: TextStyle(color: Colors.white),),
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                  Center(child: Text("Forgot Password?", style: TextStyle(color: Color.fromRGBO(49, 39, 79, .6)),)),
+                ],
+              ),
+            )
           ],
-          rows: [
-            DataRow(cells: [
-              DataCell(Text('01.')),
-              DataCell(Text('001.')),
-              DataCell(Text('KeripikTempe.')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('02.')),
-              DataCell(Text('002.')),
-              DataCell(Text('KeripikBuah.')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('03.')),
-              DataCell(Text('003.')),
-              DataCell(Text('KeripikKentang.')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('04.')),
-              DataCell(Text('004.')),
-              DataCell(Text('DodolBuah.')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('05.')),
-              DataCell(Text('005.')),
-              DataCell(Text('MinumanBuah.')),
-            ]),
-            DataRow(cells: [
-              DataCell(Text('06.')),
-              DataCell(Text('006.')),
-              DataCell(Text('BremRasa.')),
-            ]),
-          ],
-          
         ),
       ),
     );
   }
 }
-
