@@ -1,14 +1,22 @@
-# login
+# Tugas Kelompok 1 SIB3A
+
+Nama Kelompok :
+
++ Alega Naufal Akbar NIM 2141762058
++ Ananda Galang Saputra NIM 2141762124
++ Anas Wirayudha NIM 2141764101
++ Firdaus Rizky Saputra NIM 2141762134
++ Rizki Ridho Prasetyo NIM 2141762130
 
 Pembagian tugas kelompok :
 
-Login (Alega)
-Akses Halaman Utama (Home) (Alega)
-Manajemen Login Store Manajemen (Galang)
-Akses Halaman Kriteria (galang)
-Akses Halaman Nilai Bobot Alternatif (Anas)
-Akses Data Alternatif (Firdaus)
-Hail perhitungan (Ridho)
++ Login (Alega)
++ Akses Halaman Utama (Home) (Alega)
++ Manajemen Login Store Manajemen (Galang)
++ Akses Halaman Kriteria (galang)
++ Akses Halaman Nilai Bobot Alternatif (Anas)
++ Akses Data Alternatif (Firdaus)
++ Hail perhitungan (Ridho)
 
 ## Getting Started
 
