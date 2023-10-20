@@ -1,6 +1,14 @@
 # login
 
-A new Flutter project.
+Pembagian tugas kelompok :
+
+Login (Alega)
+Akses Halaman Utama (Home) (Alega)
+Manajemen Login Store Manajemen (Galang)
+Akses Halaman Kriteria (galang)
+Akses Halaman Nilai Bobot Alternatif (Anas)
+Akses Data Alternatif (Firdaus)
+Hail perhitungan (Ridho)
 
 ## Getting Started
 
